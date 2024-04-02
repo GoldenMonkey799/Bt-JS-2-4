@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>BT-JS5-2/4</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <!-- bài 1: QUản lý tuyển sinh -->
+    <h1>Quản lý tuyển sinh</h1>
+
+    <label for="score1">Điểm môn 1:</label>
+    <input
+      type="number"
+      id="score1"
+      name="score1"
+      min="0"
+      step="0.1"
+    /><br /><br />
+
+    <label for="score2">Điểm môn 2:</label>
+    <input
+      type="number"
+      id="score2"
+      name="score2"
+      min="0"
+      step="0.1"
+    /><br /><br />
+
+    <label for="score3">Điểm môn 3:</label>
+    <input
+      type="number"
+      id="score3"
+      name="score3"
+      min="0"
+      step="0.1"
+    /><br /><br />
+
+    <label for="region">Khu vực (A, B, C, X):</label>
+    <input type="text" id="region" name="region" /> <br /><br />
+
+    <label for="object">Đối tượng (1, 2, 3, X):</label>
+    <input type="text" id="object" name="object" /> <br /><br />
+
+    <button onclick="checkAdmission()">Kiểm tra kết quả</button>
+
+    <p id="result"></p>
+    <!-- bài 2: TÍnh tiền điện 
+    Quy tắc tính tiền:
+50 Kw đầu - 500đ/1Kw
+50 Kw kế - 650đ/ 1Kw
+100 Kw kế - 850đ/ 1Kw
+150 Kw kế - 1100đ/ 1Kw
+Còn lại - 1300đ/ 1Kw -->
+
+    <h2>Tính Tiền Điện</h2>
+    <form id="electricityForm">
+      <label for="customerName">Tên khách hàng:</label>
+      <input
+        type="text"
+        id="customerName"
+        name="customerName"
+        required
+      /><br /><br />
+
+      <label for="kwh">Số kWh tiêu thụ:</label>
+      <input type="number" id="kwh" name="kwh" required /> <br /><br />
+
+      <input
+        type="button"
+        value="Tính Tiền"
+        onclick="calculateElectricityBill()"
+      />
+    </form>
+
+    <p id="result"></p>
+
+    <!-- Bài 3: Tính thuế thu nhập cá nhân -->
+
+    <h2>Tính thuế thu nhập Cá Nhân</h2>
+    <form id="taxForm">
+      <label for="fullName">Họ tên:</label>
+      <input type="text" id="fullName" name="fullName" required /><br /><br />
+
+      <label for="income">Tổng thu nhập năm (triệu VND):</label>
+      <input type="number" id="income" name="income" required /><br /><br />
+
+      <label for="dependents">Số người phụ thuộc:</label>
+      <input type="number" id="dependents" name="dependents" required />
+      <br /><br />
+
+      <input type="button" value="Tính Thuế" onclick="calculateTax()" />
+    </form>
+
+    <p id="taxResult"></p>
+
+    <!-- Bài 4: tính tiền cap -->
+    <h2>Tính Tiền Cáp</h2>
+
+    <form id="formTinhTienCap">
+      <label for="loaiKhachHang">Loại Khách Hàng:</label>
+      <select id="loaiKhachHang" onchange="kiemTraLoaiKhachHang()">
+        <option value="nhaDan">Nhà Dân</option>
+        <option value="doanhNghiep">Doanh Nghiệp</option></select
+      ><br /><br />
+
+      <label for="soKetNoi">Số Kết Nối:</label>
+      <input type="number" id="soKetNoi" disabled /> <br /><br />
+
+      <label for="soKenhCaoCap">Số Kênh Cao Cấp:</label>
+      <input type="number" id="soKenhCaoCap" /><br /><br />
+
+      <input type="button" value="Tính Tiền" onclick="tinhTienCap()" />
+    </form>
+
+    <h3 id="tongTien">Tổng tiền: $0.00</h3>
+
+    <footer>
+      <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
